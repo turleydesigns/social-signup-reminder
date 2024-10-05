@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Social Sign-up Reminder",
+  "version": "1.0",
+  "description": "Remembers your social sign-up choice and reminds you when you return to the site.",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.ts"]
+    }
+  ]
+}
